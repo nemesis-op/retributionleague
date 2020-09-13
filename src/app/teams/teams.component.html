@@ -1,0 +1,14 @@
+<div class="top-bar"></div>
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3" *ngFor="let data of teamsData">
+                <div class="team-col">
+                    <img src="assets/dp/{{data.logoUrl}}" height="96" width="96" alt="DP">
+                    <p class="name">{{data.name}}</p>
+                    <p class="description">"{{data.description}}"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

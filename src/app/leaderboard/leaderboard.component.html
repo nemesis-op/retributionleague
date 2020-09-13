@@ -1,0 +1,30 @@
+<div class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col col-6"></div>
+            <div class="col col-1">p</div>
+            <div class="col col-1">w</div>
+            <div class="col col-1">l</div>
+            <div class="col col-1">d</div>
+            <div class="col col-1">pd</div>
+            <div class="col col-1"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row item-row" *ngFor="let data of leaderboardData">
+          <div class="col col-6 info">
+            <img src="assets/dp/{{data.logoUrl}}" height="56" width="56" alt="DP">
+            <p class="m-0">{{data.name}}</p>
+          </div>
+          <div class="col col-1">{{data.details.p}}</div>
+          <div class="col col-1">{{data.details.w}}</div>
+          <div class="col col-1">{{data.details.l}}</div>
+          <div class="col col-1">{{data.details.d}}</div>
+          <div class="col col-1">{{data.details.pd}}</div>
+          <div class="col col-1 point">{{data.details.points}}</div>
+        </div>
+      </div>   
+</div>

@@ -1,0 +1,112 @@
+.top-bar{
+    height: 56px;
+    width: 100%;
+    margin-top: 54px;
+    padding: 24px 8px 0px 8px;
+}
+.content-body{
+    width: 100%;
+    height: 500px;
+    &::before{
+        content: '';
+        height: 95vh;
+        width: 100px;
+        position: fixed;
+        z-index: -2;
+        top: 112px;
+        left: 0px;
+        background-image: url('../../assets/m-bg.svg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 90% 90%;
+    }
+}
+
+.match-col{
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #333333;
+    box-shadow: 3px 3px 16px 0 rgba(0, 0, 0, 0.2),
+                -1px -1px 6px 0 rgba(229, 229, 229, 0.1);
+    margin-bottom: 16px;
+    height: calc(100% - 16px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .team-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 30%;
+        img{
+            border-radius: 50%;
+        }
+        p{
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ED2020;
+            margin: 15px 0px 0px 0px;
+        }
+    }
+    .match-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 40%;
+        height: 100%;
+        span{
+            text-align: center;
+            font-size: 12px;
+            color: #c4c4c480;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-top: 16px;
+        }
+        .result{
+            margin: 15px 0px 0px 0px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: #ED2020;
+            text-transform: uppercase;
+        }
+        .match-type{
+            margin: 8px 0px 8px 0px;
+            text-align: center;
+            font-size: 16px;
+            color: #ED2020;
+            text-transform: uppercase;
+        }
+        .date-time{
+            margin: 0px;
+            margin-bottom: 14px;
+            text-align: center;
+            font-size: 14px;
+            color: #c4c4c4;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .match-info{
+        .result{
+            font-size: 16px !important;
+        }
+        .match-type{
+            font-size: 14px !important;
+        }
+        .date-time{
+            font-size: 12px !important;
+        }
+    }
+    .team-info{
+        p{
+            font-size: 14px !important;
+        }
+    }
+}

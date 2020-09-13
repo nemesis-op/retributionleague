@@ -1,0 +1,185 @@
+.top-nav{
+    width: 100%;
+    height: 56px;
+    padding: 0px 16px;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    &::before{
+        content: '';
+        height: 40px;
+        width: 204px;
+        position: absolute;
+        left: 16px;
+        top: 8px;
+        background-image: url('../../assets/logo-red-horizontal.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .nav-list{
+        display: flex;
+        height: 100%;
+        .item{
+            height: 100%;
+            width: 164px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5E5E5E;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            &.active{
+                color: #ED2020;
+                position: relative;
+                &::before{
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    border-radius: 0px 0px 2px 2px;
+                    background-color: #ED2020;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                }
+            }
+            &:hover{
+                color: #ED2020;
+            }
+        }
+    }
+    .menu{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../assets/menu.svg');
+        display: none;
+    }
+}
+
+.side-nav-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: -1000000px;
+    z-index: 999;
+    transition: all 400ms;
+    &.active{
+        left: 0px;
+    }
+    .side-nav{
+        height: 100%;
+        width: 256px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-top: 30px;
+        background-color: #333333;
+        a{
+            width: 100%;
+            height: 56px;
+            padding: 0px 32px;
+            display: flex;
+            align-items: center;
+            color: #5E5E5E;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            &.active{
+                position: relative;
+                color:#ED2020;
+                &:hover{
+                    color:#ED2020;
+                }
+                &::after{
+                    content: '';
+                    height: 100%;
+                    width: 3px;
+                    background-color:#ED2020;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    border-radius: 0px 3px 3px 0px;
+                }
+            }
+        }
+    }
+    .side-nav-overlay{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+@media only screen and (max-width: 920px) {
+    .menu{
+        display: block !important;
+    }
+    .top-nav{
+        justify-content: flex-end !important;
+        .nav-list{
+            display: none !important;
+        }
+    }
+}
+
+.loader-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99999;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .loader{
+        height: 200px;
+        width: 200px;
+        background-image: url('../../assets/loader/1-01.png');
+        background-position: center;
+        background-size: 200% 200%;
+        animation: loading 6s ease-in-out infinite;
+    }
+    p{
+        margin: 16px 0px 0px 0px;
+        align-items: center;
+        color:#ED2020;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes loading {
+    0%   {background-image: url('../../assets/loader/1-01.png');}
+    10%  {background-image: url('../../assets/loader/2-01.png');}
+    15%  {background-image: url('../../assets/loader/3-01.png');}
+    20%  {background-image: url('../../assets/loader/4-01.png');}
+    25%  {background-image: url('../../assets/loader/5-01.png');}
+    30%  {background-image: url('../../assets/loader/6-01.png');}
+    35%  {background-image: url('../../assets/loader/7-01.png');}
+    40%  {background-image: url('../../assets/loader/8-01.png');}
+    45%  {background-image: url('../../assets/loader/9-01.png');}
+    50%  {background-image: url('../../assets/loader/10-01.png');}
+    55%  {background-image: url('../../assets/loader/10-01.png');}
+    60%  {background-image: url('../../assets/loader/9-01.png');}
+    65%  {background-image: url('../../assets/loader/8-01.png');}
+    70%  {background-image: url('../../assets/loader/7-01.png');}
+    75%  {background-image: url('../../assets/loader/6-01.png');}
+    80%  {background-image: url('../../assets/loader/5-01.png');}
+    85%  {background-image: url('../../assets/loader/4-01.png');}
+    90%  {background-image: url('../../assets/loader/3-01.png');}
+    95%  {background-image: url('../../assets/loader/2-01.png');}
+    100%  {background-image: url('../../assets/loader/1-01.png');}
+  }

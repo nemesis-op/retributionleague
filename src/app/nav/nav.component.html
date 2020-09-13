@@ -1,0 +1,18 @@
+<div class="top-nav">
+    <div class="nav-list">
+        <a routerLink="/leaderboard" class="item" routerLinkActive="active">Leaderboard</a>
+        <a routerLink="/matches" class="item" routerLinkActive="active">Matches</a>
+        <a routerLink="/teams" class="item" routerLinkActive="active">Teams</a>
+    </div>
+    <div class="menu" (click)="sidenavToggle=!sidenavToggle"></div>
+</div>
+<div class="side-nav-container" [ngClass]="{'side-nav-container':true,'active':sidenavToggle}">
+    <div class="side-nav">
+        <a routerLink="/leaderboard" class="item" routerLinkActive="active" (click)="sidenavToggle=!sidenavToggle">Leaderboard</a>
+        <a routerLink="/matches" class="item" routerLinkActive="active" (click)="sidenavToggle=!sidenavToggle">Matches</a>
+        <a routerLink="/teams" class="item" routerLinkActive="active" (click)="sidenavToggle=!sidenavToggle">Teams</a>
+    </div>
+    <div class="side-nav-overlay" (click)="sidenavToggle=!sidenavToggle"></div>
+</div>
+<router-outlet *ngIf="showApp"></router-outlet>
+<div class="loader-container" *ngIf="!showApp"><div class="loader"></div><p>Loading...</p></div>

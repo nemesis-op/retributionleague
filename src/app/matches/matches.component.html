@@ -1,0 +1,25 @@
+<div class="top-bar"></div>
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let data of matchesData">
+                <div class="match-col">
+                    <div class="team-info">
+                        <img src="assets/dp/{{data.teamOneLogoUrl}}" height="64" width="64" alt="DP">
+                        <p>{{data.teamOne}}</p>
+                    </div>
+                    <div class="match-info">
+                        <span *ngIf="!data.completed">vs</span>
+                        <p class="result"*ngIf="data.completed">{{data.teamOneScore}} : {{data.teamTwoScore}}</p>
+                        <p class="match-type">{{data.matchType}}</p>
+                        <p class="date-time">{{ data.time | date:'d MMM yyyy, h:m aaa' }}</p>
+                    </div>
+                    <div class="team-info">
+                        <img src="assets/dp/{{data.teamTwoLogoUrl}}" height="64" width="64" alt="DP">
+                        <p>{{data.teamTwo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
